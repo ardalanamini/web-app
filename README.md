@@ -1,5 +1,7 @@
 # web-app
 
+[![Test](https://github.com/ardalanamini/web-app/actions/workflows/test.yml/badge.svg)](https://github.com/ardalanamini/web-app/actions/workflows/test.yml)
+
 React Web Application Template
 
 > This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
