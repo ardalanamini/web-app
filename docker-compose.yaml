@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: web-app
+    container_name: web-app
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - 80:3000
+    volumes:
+      - node-modules:/home/node/node_modules
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  node-modules:
