@@ -32,6 +32,8 @@ RUN npm i --production
 
 COPY --chown=node:node ./public ./public
 
+COPY --chown=node:node ./sentry.*.config.js ./
+
 COPY --from=build --chown=node:node /home/node/.next ./.next
 
 EXPOSE 3000

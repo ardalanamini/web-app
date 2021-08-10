@@ -1,13 +1,14 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import app from "package.json";
+import { withSentry } from "@sentry/nextjs";
 import type { NextApiRequest, NextApiResponse } from "next";
+import app from "package.json";
 
 type DataT = {
   name: string,
   version: string,
 }
 
-export default function handler(
+function handler(
   req: NextApiRequest,
   res: NextApiResponse<DataT>,
 ): void {
@@ -18,3 +19,5 @@ export default function handler(
       version: app.version,
     });
 }
+
+export default withSentry(handler);
